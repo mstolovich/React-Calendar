@@ -1,0 +1,32 @@
+.DayCells_row {
+  display: flex;
+}
+.DayCells_cell {
+  flex-basis: calc(100% / 7);
+  box-sizing: border-box;
+  min-width: 85px;
+  height: 7em;
+  margin: 0.15em;
+  padding: 0.3em;
+  color: #d2e0e0;
+  font-size: 0.7em;
+  background-color: #232c3f;
+}
+.DayCells_cell___anotherMonth {
+  visibility: hidden;
+}
+.DayCells_cell___activeDay {
+  border-left: 3px solid;
+}
+.DayCells_cell___gainDay {
+  background-color: #0b5452;
+  border-color: #04b399;
+}
+.DayCells_cell___lossDay {
+  background-color: #512e3f;
+  border-color: #fd6c8f;
+}
+.DayCells_cell___cellNumber {
+  margin-right: 0.4em;
+  font-size: 1.3em;
+}

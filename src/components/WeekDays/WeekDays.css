@@ -1,0 +1,12 @@
+.WeekDays_row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 0.8em;
+}
+.WeekDays_day {
+  flex-basis: calc(100% / 7);
+  font-weight: 700;
+  text-transform: uppercase;
+}

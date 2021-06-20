@@ -1,0 +1,12 @@
+.Calendar {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  min-width: 580px;
+  max-width: 900px;
+}
+
+.Calendar_cells {
+  flex-grow: 1;
+  margin-left: 20px;
+}
