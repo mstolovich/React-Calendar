@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-grow: 1;
-  min-width: 580px;
+  min-width: 600px;
   max-width: 900px;
 }
 

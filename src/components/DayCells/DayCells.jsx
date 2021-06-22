@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { format, endOfWeek, startOfWeek, endOfMonth, startOfMonth, isSameMonth, addDays, isSameDay } from 'date-fns'
+import { format, endOfWeek, startOfWeek, endOfMonth, startOfMonth, addDays, isSameDay, getWeek } from 'date-fns'
 import './DayCells.css';
 import clsx from 'clsx';
 
@@ -60,11 +60,11 @@ export const DayCells = ({ gainLossData, firstActiveDay }) => {
     while (day <= endDate) {
       for (let weekDay = 0; weekDay < 7; weekDay++) {
         const formattedDate = format(day, 'd');
-
         const { trades, gainLoss: dayTotal } = wholePeriodStats[counter]
         const classes = clsx({
           DayCells_cell: true,
-          'DayCells_cell___anotherMonth': !isSameMonth(day, monthFirstDay),
+          'DayCells_cell___prevMonth': day < monthFirstDay,
+          'DayCells_cell___nextMonth': day > monthLastDay,
           'DayCells_cell___activeDay': trades,
           'DayCells_cell___gainDay': dayTotal > 0,
           'DayCells_cell___lossDay': dayTotal < 0,
@@ -75,7 +75,7 @@ export const DayCells = ({ gainLossData, firstActiveDay }) => {
             key={day}
           >
             <div>
-              <span className="DayCells_cell___cellNumber">{formattedDate}</span>
+              <span className="DayCells_cell___dayNumber">{formattedDate}</span>
               <span>
                 {dayTotal && getFormattedAmount(dayTotal)}
               </span>
@@ -89,7 +89,7 @@ export const DayCells = ({ gainLossData, firstActiveDay }) => {
         counter++
       }
       weeks.push(
-        <div className="DayCells_row" key={day}>
+        <div className="DayCells_row" key={getWeek(day)}>
           {days}
         </div>
       );

@@ -4,16 +4,21 @@
 .DayCells_cell {
   flex-basis: calc(100% / 7);
   box-sizing: border-box;
-  min-width: 85px;
-  height: 7em;
+  min-width: 7em;
+  max-height: 7em;
+  min-height: 5em;
+  height: 10vw;
   margin: 0.15em;
   padding: 0.3em;
   color: #d2e0e0;
-  font-size: 0.7em;
+  font-size: 0.8rem;
   background-color: #232c3f;
 }
-.DayCells_cell___anotherMonth {
+.DayCells_cell___nextMonth {
   visibility: hidden;
+}
+.DayCells_cell___prevMonth {
+  color: transparent;
 }
 .DayCells_cell___activeDay {
   border-left: 3px solid;
@@ -26,7 +31,13 @@
   background-color: #512e3f;
   border-color: #fd6c8f;
 }
-.DayCells_cell___cellNumber {
+.DayCells_cell___dayNumber {
   margin-right: 0.4em;
-  font-size: 1.3em;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 750px) {
+  span{
+    display:block;
+  }
 }
